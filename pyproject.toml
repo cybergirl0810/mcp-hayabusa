@@ -1,0 +1,24 @@
+[project]
+name = "mcp-hayabusa"
+version = "0.1.0"
+description = "MCP server that exposes Hayabusa (Windows event log forensics/threat hunting) as tools for LLM agents"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+mcp-hayabusa = "mcp_hayabusa.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
